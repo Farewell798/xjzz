@@ -486,11 +486,11 @@ var reputationDefinition = [{ c1: "player", c2: "rebels", r1: "hostile", r2: "mi
         name: "polymer", req: { material: 8 }, displayName: "Polymerizer",
         cost: { titanium: 0, plastic: 0 }, energy: 1500, prod: { methane: 800, water: 5000, plastic: 20000 }, mult: { titanium: 1.25, plastic: 1.35 }, type: "prod", type2: "prod", environment: ["gas giant"]
     }, { name: "osmiumext", req: { osmium: 1 }, displayName: "Osmium Extractor", cost: { silicon: 5E5, rhodium: 3500 }, prod: { osmium: 1 }, mult: { silicon: 1.3, rhodium: 1.5 }, energy: -1200, type: "mining", environment: ["ice", "metallic", "radioactive"] }, {
-        name: "mkclone", req: { osmium: 1 }, displayName: "Metallokopta Clonator", cost: { silicon: 25E5, rhodium: 15E3 }, prod: {
-            osmium: -5, robots: -5,
-            sulfur: -20, silicon: -85, "mK Embryo": 1
+        name: "mkclone", req: { osmium: 1 }, displayName: "Metallokopta Clonator", cost: { silicon: 0, rhodium: 0 }, prod: {
+            osmium: 500000, robots: 500000,
+            sulfur: 200000, silicon: 850000, "mK Embryo": 100000
         }, mult: { silicon: 1.3, rhodium: 1.5 }, energy: -2E3, type: "prod", type2: "prod", environment: ["ice", "desert", "metallic", "radioactive"]
-    }, { name: "ammonia_refrigerator", req: { ammonia_chemistry: 1 }, displayName: "Ammonia Refrigerator", cost: { nanotubes: 10 * mi, engine: 1 * mi }, mult: { nanotubes: 1.25, engine: 1.35 }, prod: { coolant: 8, ammonia: -10, methane: -200 }, energy: -500, type: "prod", type2: "prod", environment: allEnv }, {
+    }, { name: "ammonia_refrigerator", req: { ammonia_chemistry: 1 }, displayName: "Ammonia Refrigerator", cost: { nanotubes: 0 * mi, engine: 0 * mi }, mult: { nanotubes: 1.25, engine: 1.35 }, prod: { coolant: 8, ammonia: 10, methane: 200 }, energy: 500, type: "prod", type2: "prod", environment: allEnv }, {
         name: "generator", displayName: "Small Generator", cost: { iron: 2E3, steel: 100, titanium: .17 },
         prod: { pollution: 10, fuel: -3 }, energy: 20, mult: { iron: 1.15, steel: 1.27, titanium: 1.35 }, type: "energy", type2: "prod"
     }, { name: "thermal", displayName: "Thermal Plant", cost: { iron: 5E3, steel: 1E3, titanium: .17 }, prod: { pollution: 30, fuel: -10 }, energy: 100, mult: { iron: 2.5, steel: 2.7, titanium: 1.9 }, type: "energy", type2: "prod", req: { chemical: 1 } }, { name: "solar", displayName: "Solar Central", cost: { steel: 1E4, titanium: 1E4, silicon: 1E3 }, mult: { steel: 1.1, titanium: 1.1, silicon: 1.3 }, energy: 50, type: "energy", type2: "solar", req: { electronics: 1 }, environment: allEnvExt },
@@ -550,17 +550,17 @@ var reputationDefinition = [{ c1: "player", c2: "rebels", r1: "hostile", r2: "mi
     }, {
         name: "aggregator", req: { chemical: 30 }, displayName: "Methane Aggregator", cost: { steel: bi, nanotubes: 10 * mi, engine: 1E5 }, mult: { steel: 1.35, nanotubes: 1.3, engine: 1.3 }, prod: { methane: -mi, nanotubes: 20 }, energy: -5E3, type: "prod", type2: "prod", environment: ["lava",
             "gas giant"]
-    }, { name: "ceramic", req: { material: 35 }, displayName: "Ceramic Foundry", cost: { nanotubes: 10 * mi, engine: 1 * mi }, mult: { nanotubes: 1.25, engine: 1.35 }, prod: { water: -5E5, nanotubes: -1E4, rhodium: -2E3, sulfur: -1E3, osmium: -500, meissnerium: 1, iron: -2500 }, environment: allTerAcid, energy: -500, type: "prod", type2: "prod" }, {
-        name: "superconductor_factory", req: { electronics: 30 }, displayName: "Superconductors Factory", cost: { nanotubes: 10 * mi, engine: 1 * mi, meissnerium: 1E3 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: {
-            meissnerium: -1,
-            coolant: -350, superconductors: 1
-        }, environment: allTerAcid, energy: -5E3, type: "prod", type2: "prod"
-    }, { name: "mcell_factory", req: { electronics: 35 }, displayName: "Cells Factory", cost: { nanotubes: 10 * mi, engine: 1 * mi, meissnerium: 1E3 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { superconductors: -1, circuits: -10 * mi, nanotubes: -10 * mi, "meissner cell": 1 }, environment: allTerAcid, energy: -1E4, type: "prod", type2: "prod" }, {
+    }, { name: "ceramic", req: { material: 35 }, displayName: "Ceramic Foundry", cost: { nanotubes: 0 * mi, engine: 0 * mi }, mult: { nanotubes: 1.25, engine: 1.35 }, prod: { water: 5E5, nanotubes: 1E4000, rhodium: 2E30000, sulfur: 1E300, osmium: 500000, meissnerium: 100000, iron: 2500000 }, environment: allTerAcid, energy: 500, type: "prod", type2: "prod" }, {
+        name: "superconductor_factory", req: { electronics: 30 }, displayName: "Superconductors Factory", cost: { nanotubes: 0 * mi, engine: 0 * mi, meissnerium: 0 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: {
+            meissnerium: 10000,
+            coolant: 350000, superconductors: 100000
+        }, environment: allTerAcid, energy: 5E3, type: "prod", type2: "prod"
+    }, { name: "mcell_factory", req: { electronics: 35 }, displayName: "Cells Factory", cost: { nanotubes: 0 * mi, engine: 0 * mi, meissnerium: 0 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { superconductors: 100000, circuits: 10000 * mi, nanotubes: 100000 * mi, "meissner cell": 100000 }, environment: allTerAcid, energy: 1E4, type: "prod", type2: "prod" }, {
         name: "qasers_assembler", req: { protohalean_science: 1 }, displayName: "Qasers Assembler", cost: {
-            nanotubes: mi,
-            engine: 25E4, meissnerium: 300
-        }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { superconductors: -1, circuits: -10 * mi, nanotubes: -10 * mi, qasers: 1, water: -25E4 }, energy: -1E4, type: "prod", type2: "prod"
-    }, { name: "shield_assembler", req: { protohalean_science: 5 }, displayName: "Shield Assembler", cost: { nanotubes: 50 * mi, engine: 10 * mi, meissnerium: 15E3 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { "meissner cell": -2, qasers: -10, "shield capsule": 1 }, energy: -2E4, type: "prod", type2: "prod" }, {
+            nanotubes: 0,
+            engine: 0, meissnerium: 0
+        }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { superconductors: 10000, circuits: 1000 * mi, nanotubes: 1000 * mi, qasers: 1000000, water: 25E4 }, energy: 1E4, type: "prod", type2: "prod"
+    }, { name: "shield_assembler", req: { protohalean_science: 5 }, displayName: "Shield Assembler", cost: { nanotubes: 0 * mi, engine: 0 * mi, meissnerium: 0 }, mult: { meissnerium: 1.2, nanotubes: 1.25, engine: 1.35 }, prod: { "meissner cell": 20000, qasers: 10000, "shield capsule": 100000 }, energy: 2E4, type: "prod", type2: "prod" }, {
         name: "fissor", displayName: "Technetium Fissor",
         cost: { graphite: 0, nanotubes: 0 }, prod: { technetium: 100000, uranium: 120000 }, mult: { graphite: 1.25, nanotubes: 1.35 }, type: "prod", type2: "prod", req: { halean: 1 }, environment: allEnvRadio
     }, { name: "haleanFusion", displayName: "Caesium Energy Station", cost: { technetium: 5E6, rhodium: 8E5 }, prod: { caesium: -3 }, mult: { technetium: 1.15, rhodium: 1.2 }, energy: 5E4, type: "energy", type2: "prod", req: { nononono: 15 }, environment: ["gas giant", "radioactive", "acid"] }, {
@@ -578,8 +578,8 @@ var reputationDefinition = [{ c1: "player", c2: "rebels", r1: "hostile", r2: "mi
         }, mult: { technetium: 1.35, graphite: 1.25 }, prod: { titanium: 8 }, energy: -200, type: "mining", environment: ["lava", "acid"]
     }, { name: "time_machine", displayName: "Wahrian Time Machine", cost: { iron: 500 * bi, steel: mi * mi, titanium: 10 * bi }, mult: { iron: 1.5, steel: 2, titanium: 2.2 }, req: { secret: 1 }, environment: allEnvExt, type2: "prod", description: "Using the time machine will reset your progress converting your Research Points into Technology Points" }, {
         name: "space_machine", displayName: "Space Gate Alpha", cost: {
-            iron: 500 * bi,
-            steel: mi * mi, titanium: 10 * bi
+            iron: 0 * bi,
+            steel: 0 * mi, titanium: 0 * bi
         }, mult: { iron: 1.5, steel: 2, titanium: 2.2 }, req: { secret: 1 }, environment: allEnvExt, type2: "prod", description: "The Space Gate Alpha will warp a fleet of your choice to Solidad in Andromeda's Heart. The option to warp will appear once you have selected your fleet."
     }, {
         name: "cryocell_fact", displayName: "Cryocell Facility", energy: -20, prod: { "empty cryocell": 1, ice: -3, steel: -35, titanium: -5 }, cost: { iron: 2E5, steel: 5E4, titanium: 1E3 }, mult: { iron: 1.3, steel: 1.35, titanium: 1.4 }, req: { ice: 2, demographics: 2 },
@@ -589,8 +589,8 @@ var reputationDefinition = [{ c1: "player", c2: "rebels", r1: "hostile", r2: "mi
             iron: 1.3, steel: 1.35,
             titanium: 1.4
         }, req: { ice: 2, demographics: 2 }, environment: allEnvExt, type2: "prod"
-    }, { name: "space_beta", displayName: "Space Gate Beta", cost: { osmium: 50 * mi, rhodium: 100 * mi }, mult: { rhodium: 2, osmium: 2 }, req: { secret: 2 }, environment: allEnvExt, type2: "prod", description: "The Space Gate Beta will warp a fleet of your choice to Bharash in Perseus' Arm. The option to warp will appear once you have selected your fleet." }, {
-        name: "space_gamma", displayName: "Space Gate Gamma", cost: { osmium: 50 * mi, rhodium: 100 * mi }, mult: {
+    }, { name: "space_beta", displayName: "Space Gate Beta", cost: { osmium: 0 * mi, rhodium: 0 * mi }, mult: { rhodium: 2, osmium: 2 }, req: { secret: 2 }, environment: allEnvExt, type2: "prod", description: "The Space Gate Beta will warp a fleet of your choice to Bharash in Perseus' Arm. The option to warp will appear once you have selected your fleet." }, {
+        name: "space_gamma", displayName: "Space Gate Gamma", cost: { osmium: 0 * mi, rhodium: 0 * mi }, mult: {
             rhodium: 2,
             osmium: 2
         }, notBuildable: !0, environment: allEnvExt, type2: "prod", description: "The Space Gate Gamma will warp a fleet of your choice to Xirandrus in the Void. The option to warp will appear once you have selected your fleet."
@@ -678,8 +678,8 @@ var reputationDefinition = [{ c1: "player", c2: "rebels", r1: "hostile", r2: "mi
         weapon: "laser", icon: "orion2", name: "Orion Cargo", type: "Cargoship", novalue: 1, req: 14, power: 33, armor: 20, speed: 1.5, storage: 250 *
             mi, fuel: "hydrogen", weight: 5 * mi, combatWeight: 2, hp: 150, cost: { robots: 200, nanotubes: 2E4 }, civis: [0]
     }, { weapon: "laser", name: "Orion League Delivery Vessel", type: "Cargoship", novalue: 1, req: 14, power: 33 * mi, armor: 20 * mi, speed: .5, storage: 100 * mi, fuel: "hydrogen", weight: 5 * mi, combatWeight: 2, hp: mi, cost: { robots: 100, nanotubes: 1E4 } }, {
-        weapon: "antimatter", icon: "anger", name: "Anger of Perseus", type: "Capital Ship", resReq: { quantum: 3 }, req: 16, shield: mi, power: 300 * mi, armor: 50 * mi, speed: .035, storage: 100 * mi, fuel: "hydrogen", weight: 5 *
-            mi, hp: 5 * bi, cost: { iron: 200 * bi, steel: 2 * tri, titanium: 50 * bi, nanotubes: 500 * mi, ammunition: bi, "full battery": 350 * mi, "u-ammunition": 100 * mi, armor: 10 * mi, robots: mi, engine: 3E5, antimatter: 1E4 }, special: { desc: "<span style='float:left;margin-left:16px;' class='red_text'>The Anger of Perseus will enter a</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>'berserk mode' when the player's OR</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>the enemy fleet's HP drop below 15%.</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>In this mode, your fleet will get +50%</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>piercing power and will do 50% more</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>damage for each Anger of Perseus</span><br>" },
+        weapon: "antimatter", icon: "anger", name: "Anger of Perseus", type: "Capital Ship", resReq: { quantum: 3 }, req: 16, shield: 9999*mi, power: 99900999 * mi, armor: 509999 * mi, speed: 9999, storage: 100999 * mi, fuel: "hydrogen", weight: 5 *
+            mi, hp: 5 * bi, cost: { iron: 0 * bi, steel: 0 * tri, titanium: 0 * bi, nanotubes: 0 * mi, ammunition: bi, "full battery": -350 * mi, "u-ammunition": -100 * mi, armor: -10 * mi, robots: -mi, engine: -3E5, antimatter: -1E4 }, special: { desc: "<span style='float:left;margin-left:16px;' class='red_text'>The Anger of Perseus will enter a</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>'berserk mode' when the player's OR</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>the enemy fleet's HP drop below 15%.</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>In this mode, your fleet will get +50%</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>piercing power and will do 50% more</span><span></span><br><span style='float:left;margin-left:16px;' class='red_text'>damage for each Anger of Perseus</span><br>" },
         civis: [0, 21]
     }, {
         weapon: "unarmed", icon: "miner", name: "Medusa Miner", type: "Miner Ship", novalue: 1, resReq: { space_mining: 1 }, req: 18, power: 0, armor: 1, speed: .5, storage: 0, fuel: "hydrogen", weight: 100 * mi, combatWeight: 2, hp: 10, cost: { iron: 300 * mi, steel: bi, titanium: 100 * mi, nanotubes: mi, "full battery": 25E4, robots: 1E5, engine: 500 }, special: { desc: "<span style='float:left;margin-left:16px;' class='gold_text'>Each Medusa Miner placed in orbit</span><span></span><br><span style='float:left;margin-left:16px;' class='gold_text'>will boost extraction buildings by</span><span></span><br><span style='float:left;margin-left:16px;' class='gold_text'>20%*number_miners/log(2+number_miners)</span><span></span><br><span style='float:left;margin-left:16px;' class='gold_text'>It means, 1 miner will give you 12%</span><span></span><br><span style='float:left;margin-left:16px;' class='gold_text'>two miners 20% (like before), three miners 25.8%,</span><span></span><br><span style='float:left;margin-left:16px;' class='gold_text'>ten miners 55.8%, 100 miners 300%, and so on</span><span></span>" },
